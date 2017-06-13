@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GPA Calculator</string>
+    <string name="text_1">Just input the number of credits of each subject and the corresponding grade and press "Okay".</string>
+    <string name="text2">Enjoy</string>
 </resources>
