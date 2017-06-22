@@ -7,7 +7,7 @@
     tools:context="com.example.parul.gpacalculator.MainActivity">
 
     <EditText
-        android:id="@+id/credits_txt"
+        android:id="@+id/txt_credits"
         android:layout_width="271dp"
         android:layout_height="44dp"
         android:layout_marginBottom="8dp"
@@ -28,7 +28,7 @@
         app:layout_constraintVertical_bias="0.498" />
 
     <EditText
-        android:id="@+id/grade_txt"
+        android:id="@+id/txt_grade"
         android:layout_width="271dp"
         android:layout_height="44dp"
         android:layout_marginBottom="8dp"
@@ -84,7 +84,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/number_subject"
+        android:id="@+id/txt_subjects"
         android:layout_width="271dp"
         android:layout_height="44dp"
         android:layout_marginBottom="8dp"
