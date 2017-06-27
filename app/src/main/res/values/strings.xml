@@ -3,7 +3,8 @@
     <string name="text_1">Just input the number of credits of each subject and the corresponding grade and press "Okay".</string>
     <string name="text2">Enjoy</string>
     <string name="total_number_of_subjects">Enter total number of subjects</string>
-    <string name="input_credits">Input Credits</string>
+    <string name="input_credits">Input Credit</string>
     <string name="input_grade">Input Grade</string>
     <string name="button_okay">Okay</string>
+    <string name="calculate_gpa">Calculate GPA</string>
 </resources>
