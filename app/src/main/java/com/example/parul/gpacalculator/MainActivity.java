@@ -1,16 +1,16 @@
     package com.example.parul.gpacalculator;
 
     import android.os.Bundle;
-    import android.support.v7.app.AppCompatActivity;
-    import android.view.View;
-    import android.widget.Button;
-    import android.widget.EditText;
-    import android.widget.LinearLayout;
-    import android.widget.TextView;
-    import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
-    import java.util.ArrayList;
-    import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
     public class MainActivity extends AppCompatActivity {
         private LinearLayout mLayout;
@@ -19,8 +19,8 @@
         private Button mButton;
         private double perSubjectPoint=0;
         private  int totalCredits=0;
-        List<EditText> allCredits = new ArrayList<>();
-        List<EditText> allGrades = new ArrayList<>();
+        List<String> allCredits = new ArrayList<>();
+        List<String> allGrades = new ArrayList<>();
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +40,8 @@
                    public void onClick(View v) {
 
                        mLayout.addView(createNewTextView(mEditCreditText.getText().toString(),mEditGradeText.getText().toString()));
-                       allCredits.add(mEditCreditText);
-                       allGrades.add(mEditGradeText);
-
-
+                       allCredits.add(mEditCreditText.getText().toString());
+                       allGrades.add(mEditGradeText.getText().toString());
                         }
                     };
         }
@@ -57,7 +55,7 @@
 
 
         public double pointPerSubj(int number,String grade){
-                    int point;
+                    double point;
                     if(grade.equalsIgnoreCase("S"))
                         point = 10;
                     else if (grade.equalsIgnoreCase("A"))
@@ -72,27 +70,22 @@
                         point = 5;
                     else point =0;
 
-                    double perSubjectPoint = (double)number*point;
-                    return perSubjectPoint;
+                    double x = (double)number*point;
+                    return x;
         }
 
         public void calcGpa(View view){
-                    int size = allCredits.size();
-                    String[] stringsGrade = new String[size];
-                    Integer[] intCredits = new Integer[size];
+            int size = allCredits.size();
+            String[] stringsGrade = new String[size];
+            Integer[] intCredits = new Integer[size];
                     for(int i=0; i < size; i++){
-                        stringsGrade[i] = allGrades.get(i).getText().toString();
-                        intCredits[i] = Integer.parseInt(allCredits.get(i).getText().toString());
+                        stringsGrade[i] = allGrades.get(i);
+                        intCredits[i] = Integer.parseInt(allCredits.get(i));
                         totalCredits =totalCredits+intCredits[i];
                         perSubjectPoint = perSubjectPoint+pointPerSubj(intCredits[i],stringsGrade[i]);
                     }
-                    double gpa = perSubjectPoint/totalCredits;
-
-                    Toast.makeText(this,"Your GPA is: "+gpa, Toast.LENGTH_LONG).show();
+            double gpa = perSubjectPoint/(double)totalCredits;
+            Toast.makeText(this,"Your GPA is: "+gpa, Toast.LENGTH_LONG).show();
         }
-
-
-
-
     }
 
