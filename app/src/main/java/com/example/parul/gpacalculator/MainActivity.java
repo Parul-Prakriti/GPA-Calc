@@ -46,11 +46,14 @@
                     };
         }
         private TextView createNewTextView(String text1,String text2) {
-               final LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-               final TextView textView = new TextView(this);
-               textView.setLayoutParams(lparams);
-               textView.setText("Credit: "+text1+ "\nGrade: "+ text2);
-               return textView;
+            final LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            final TextView textView = new TextView(this);
+            textView.setTextSize(16);
+            textView.setTextColor(getResources().getColor(android.R.color.black));
+            textView.setPadding(8,1,8,1);
+            textView.setLayoutParams(lparams);
+            textView.setText("Credit: "+text1+ "\nGrade: "+ text2);
+            return textView;
         }
 
 
