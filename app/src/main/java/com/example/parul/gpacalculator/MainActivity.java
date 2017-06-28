@@ -85,7 +85,8 @@ import java.util.List;
                         perSubjectPoint = perSubjectPoint+pointPerSubj(intCredits[i],stringsGrade[i]);
                     }
             double gpa = perSubjectPoint/(double)totalCredits;
-            Toast.makeText(this,"Your GPA is: "+gpa, Toast.LENGTH_LONG).show();
+            String gpaStr = String.format("%.2f",gpa);
+            Toast.makeText(this,"Your GPA is: "+gpaStr, Toast.LENGTH_LONG).show();
         }
     }
 
