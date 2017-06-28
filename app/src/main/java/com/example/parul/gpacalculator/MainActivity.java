@@ -26,7 +26,7 @@
         protected void onCreate(Bundle savedInstanceState) {
                super.onCreate(savedInstanceState);
                setContentView(R.layout.activity_main);
-               mLayout = (LinearLayout) findViewById(R.id.linearLayout);
+               mLayout = (LinearLayout) findViewById(R.id.display);
                mEditCreditText = (EditText) findViewById(R.id.txt_credits);
                mEditGradeText =  (EditText) findViewById(R.id.txt_grade);
                mButton = (Button) findViewById(R.id.button);
@@ -52,7 +52,7 @@
             textView.setTextColor(getResources().getColor(android.R.color.black));
             textView.setPadding(8,1,8,1);
             textView.setLayoutParams(lparams);
-            textView.setText("Credit: "+text1+ "\nGrade: "+ text2);
+            textView.setText("Credit: "+text1+ "\t\t\t"+"Grade: "+ text2);
             return textView;
         }
 

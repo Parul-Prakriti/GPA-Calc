@@ -5,4 +5,5 @@
     <string name="button_okay">Okay</string>
     <string name="calculate_gpa">Calculate GPA</string>
     <string name="txt">Your Grade Point Average </string>
+    <string name="input_credits_hint">Input Credits</string>
 </resources>
