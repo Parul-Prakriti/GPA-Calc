@@ -85,16 +85,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:layout_margin="2dp">
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="@string/calculate_gpa"
                 android:onClick="calcGpa"
                 android:layout_gravity="center_horizontal|center"/>
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/reset"/>
     </LinearLayout>
 
     </LinearLayout>
