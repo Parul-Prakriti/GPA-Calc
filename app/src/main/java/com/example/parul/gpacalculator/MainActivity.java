@@ -1,24 +1,24 @@
     package com.example.parul.gpacalculator;
 
+    import android.content.Intent;
     import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+    import android.support.v7.app.AppCompatActivity;
+    import android.view.View;
+    import android.widget.Button;
+    import android.widget.EditText;
+    import android.widget.LinearLayout;
+    import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+    import java.util.ArrayList;
+    import java.util.List;
 
     public class MainActivity extends AppCompatActivity {
         private LinearLayout mLayout;
         private EditText mEditCreditText;
         private EditText mEditGradeText;
         private Button mButton;
-        private double perSubjectPoint=0;
-        private  int totalCredits=0;
+        public double perSubjectPoint=0;
+        public  int totalCredits=0;
         List<String> allCredits = new ArrayList<>();
         List<String> allGrades = new ArrayList<>();
 
@@ -86,7 +86,9 @@ import java.util.List;
                     }
             double gpa = perSubjectPoint/(double)totalCredits;
             String gpaStr = String.format("%.2f",gpa);
-            Toast.makeText(this,"Your GPA is: "+gpaStr, Toast.LENGTH_LONG).show();
+            Intent final_gpa =new Intent(MainActivity.this,FinalActivity.class);
+            final_gpa.putExtra("message", gpaStr);
+            startActivity(final_gpa);
         }
     }
 
